@@ -1,0 +1,211 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* background-color: aqua; */
+}
+body{
+    background-color: whitesmoke;
+}
+.window{
+    display: flex;
+    width: 100%;
+    max-height: 100vh;
+    flex-direction: row;
+}
+
+.container{
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-top: 10%;
+    flex-basis: 250%;
+}
+.container h1{
+    text-align: center;
+    margin: 20px;
+}
+.addsection{
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 10px;
+
+}
+
+.addsection input{
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border: none;
+}
+button{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    /* outline: none; */
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.list{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    
+}
+.list ul li{
+    display: flex;
+    background-color: whitesmoke;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid royalblue;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.list ul li:hover {
+    background: #ddd;
+  }
+.list ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+ .list ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  
+.list ul :last-child{
+    border: none;
+}
+.content{
+    font-size: 2rem;
+    padding: 0 15px;
+    text-align: left;
+    
+}
+.btn-grp{
+    display: flex;
+    padding: 10px 20px;
+}
+.btn-grp button{
+    background-color: blue;
+    padding: 10px;
+    margin: 5px ;
+    color: white;
+    font: 1.2em sans-serif;
+    transition: 0.2s;
+    font-family: monospace;
+}
+
+.btn-grp .dbtn , .dbtn{
+background-color: rgb(179, 0, 0);
+
+}
+button:hover{
+    transform: scale(1.1);
+}
+
+.rmvall{
+    display: block;
+    margin: auto    ;
+}
+
+.completedtask{
+    display: none;
+    margin: auto;
+    width: 100%;
+    height: 100vh   ;
+    position: relative;
+    background-color: #CAD8D8;
+    padding: 5%;
+}
+.completedtask h2{
+    text-align: center;
+    text-decoration: underline;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+    color: #274215;
+}
+.completedtask svg{
+    width: 15px;
+    color: #999;
+    margin: 0 10px;
+}
+.completedtask ul li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    list-style: none;
+}
+
+.completedtask ul li:hover{
+    color: #85BB4D;
+    cursor:default;
+}
+.done:hover{
+    background-color: #85BB4D;
+}
+
+
+@media screen and (max-width : 770px){
+    .window{
+        flex-direction: column;
+        width: 100%;
+    }
+    .container{
+       width: 80%;
+       height: 100%;
+       font-size: 15px;
+    }
+    .addsection{
+        width: 100%;
+        padding: 0;
+    }
+    .addsection input{
+        width: 50%;
+    }
+    .content{
+        font-size: 1rem;
+    }
+    .list ul li{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .completedtask {
+        font-size: 10px;
+        width: 80%;
+        margin: 20px auto;
+    }
+    .completedtask li p{
+        font-size: 12px;
+    }
+    .rmvall{
+        position: sticky;
+        bottom: 5%;
+        left: 0;
+        width: 100%;
+        margin: auto;
+        z-index: 10;
+    }
+    .rmvall:hover{
+        transform: none;
+    }
+}
